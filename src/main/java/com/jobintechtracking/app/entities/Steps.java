@@ -1,13 +1,11 @@
 package com.jobintechtracking.app.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
+@Entity
 public class Steps {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -15,7 +13,11 @@ public class Steps {
     private String description;
     private Date startDate;
     private Date endDate;
+    @ManyToOne
+    @JoinColumn(name = "formation_id")
     private Formation formation;
+
+    @Enumerated(EnumType.STRING)
     private StepProcess stepProcess;
 
 }

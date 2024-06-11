@@ -1,7 +1,9 @@
 package com.jobintechtracking.app.entities;
 
-public enum StepProcess {
+import jakarta.persistence.Entity;
 
+
+public enum StepProcess {
     ON,
     OFF
 }
