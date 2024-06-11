@@ -1,9 +1,8 @@
 package com.jobintechtracking.app.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
 public class Learning {
 
     @Id
@@ -12,5 +11,7 @@ public class Learning {
     private String title;
     private String description;
     private String url;
+    @ManyToOne
+    @JoinColumn(name = "steps_id")
     private Steps steps;
 }

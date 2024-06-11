@@ -1,11 +1,9 @@
 package com.jobintechtracking.app.entities;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
 public class Users {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -13,5 +11,6 @@ public class Users {
     private String firstName;
     private String lastName;
     private String email;
+    @Enumerated(EnumType.STRING)
     private Roles role;
 }
