@@ -10,4 +10,6 @@ public class Doing {
     private Long id;
     private String url;
     private Steps steps;
+
+    private String test;
 }
