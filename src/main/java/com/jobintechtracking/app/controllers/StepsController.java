@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/steps")
+@CrossOrigin(origins = "http://localhost:4200")
 public class StepsController {
 
     private final StepsService stepsService;
@@ -38,6 +39,12 @@ public class StepsController {
     @GetMapping
     public ResponseEntity<List<Steps>> getAllSteps() {
         List<Steps> steps = stepsService.findAll();
+        return ResponseEntity.ok(steps);
+    }
+
+    @GetMapping(params = "formationId")
+    public ResponseEntity<List<Steps>> getStepsByFormationId(@RequestParam Long formationId) {
+        List<Steps> steps = stepsService.getStepsByFormationId(formationId);
         return ResponseEntity.ok(steps);
     }
 }

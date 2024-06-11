@@ -1,11 +1,13 @@
 package com.jobintechtracking.app.services;
 
 import com.jobintechtracking.app.entities.Doing;
-import com.jobintechtracking.app.entities.Formation;
+
 import com.jobintechtracking.app.repositories.DoingRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class DoingService {
 
     DoingRepository doingRepository;

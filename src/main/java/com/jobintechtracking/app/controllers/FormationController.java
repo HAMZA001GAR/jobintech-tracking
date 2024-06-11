@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/formations")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FormationController {
     private final FormationService formationService;
     @Autowired

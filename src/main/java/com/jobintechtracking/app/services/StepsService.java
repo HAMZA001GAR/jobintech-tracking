@@ -1,6 +1,6 @@
 package com.jobintechtracking.app.services;
 
-import com.jobintechtracking.app.entities.Formation;
+
 import com.jobintechtracking.app.entities.Steps;
 import com.jobintechtracking.app.repositories.StepRepository;
 import org.springframework.stereotype.Service;
@@ -26,5 +26,9 @@ public class StepsService {
 
     public List<Steps> findAll(){
         return stepRepository.findAll();
+    }
+
+    public List<Steps> getStepsByFormationId(Long formationId) {
+        return stepRepository.findByFormationId(formationId);
     }
 }

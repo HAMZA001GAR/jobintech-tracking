@@ -3,10 +3,11 @@ package com.jobintechtracking.app.services;
 import com.jobintechtracking.app.entities.Users;
 import com.jobintechtracking.app.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public class UserService {
 
     @Autowired
