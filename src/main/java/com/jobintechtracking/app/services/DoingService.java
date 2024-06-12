@@ -5,6 +5,7 @@ import com.jobintechtracking.app.entities.Doing;
 import com.jobintechtracking.app.repositories.DoingRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -26,5 +27,13 @@ public class DoingService {
 
     public List<Doing> findAll(){
         return doingRepository.findAll();
+    }
+
+    public Doing saveOrUpdateDoing(Doing doing) {
+         return doingRepository.save(doing);
+    }
+
+    public void deleteDoing(Long id) {
+        doingRepository.deleteById(id);
     }
 }

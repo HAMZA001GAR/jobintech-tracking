@@ -31,4 +31,12 @@ public class StepsService {
     public List<Steps> getStepsByFormationId(Long formationId) {
         return stepRepository.findByFormationId(formationId);
     }
+
+    public Steps saveOrUpdateStep(Steps step) {
+        return stepRepository.save(step);
+    }
+
+    public void deleteStep(Long id) {
+        stepRepository.deleteById(id);
+    }
 }

@@ -40,4 +40,13 @@ public class DoingController {
         List<Doing> doings = doingService.findAll();
         return ResponseEntity.ok(doings);
     }
+    @PutMapping("/{id}")
+    public Doing updateDoing(@PathVariable Long id, @RequestBody Doing doing) {
+        return doingService.saveOrUpdateDoing(doing);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteDoing(@PathVariable Long id) {
+        doingService.deleteDoing(id);
+    }
 }
