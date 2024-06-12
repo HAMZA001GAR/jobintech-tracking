@@ -1,6 +1,7 @@
 package com.jobintechtracking.app.services;
 
 import com.jobintechtracking.app.entities.Formation;
+import com.jobintechtracking.app.entities.Learning;
 import com.jobintechtracking.app.repositories.FormationRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,4 +29,11 @@ public class FormationService {
         return formationRepository.findAll();
     }
 
+    public Formation update(Formation formation) {
+        return formationRepository.save(formation);
+    }
+
+    public void deleteById(Long id) {
+        formationRepository.deleteById(id);
+    }
 }

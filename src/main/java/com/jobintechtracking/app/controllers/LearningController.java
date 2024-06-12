@@ -26,6 +26,18 @@ public class LearningController {
         return ResponseEntity.ok(savedLearning);
     }
 
+    @PutMapping
+    public ResponseEntity<Learning> updateLearning(@RequestBody Learning learning) {
+        Learning updatedLearning = learningService.update(learning);
+        return ResponseEntity.ok(updatedLearning);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> DeleteLearning(@RequestBody Long id) {
+        learningService.deleteById(id);
+        return ResponseEntity.ok("Learning deleted");
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Learning> getLearningById(@PathVariable Long id) {
         Learning learning = learningService.findById(id);

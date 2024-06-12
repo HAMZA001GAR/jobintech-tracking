@@ -19,6 +19,14 @@ public class LearningService {
         return learningRepository.save(learning);
     }
 
+    public Learning update(Learning learning) {
+        return learningRepository.save(learning);
+    }
+
+    public void deleteById(Long id) {
+        learningRepository.deleteById(id);
+    }
+
 
     public Learning findById(Long id) {
         return  learningRepository.findById(id).orElse(null);
