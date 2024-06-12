@@ -2,6 +2,7 @@
 package com.jobintechtracking.app.controllers;
 
 import com.jobintechtracking.app.entities.Formation;
+import com.jobintechtracking.app.entities.Learning;
 import com.jobintechtracking.app.services.FormationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,18 @@ public class FormationController {
     public ResponseEntity<List<Formation>> getAllFormations() {
         List<Formation> formations = formationService.findAll();
         return ResponseEntity.ok(formations);
+    }
+
+    @PutMapping
+    public ResponseEntity<Formation> updateFormations(@RequestBody Formation formation) {
+        Formation updatedFormation = formationService.update(formation);
+        return ResponseEntity.ok(updatedFormation);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> DeleteFormations(@RequestBody Long id) {
+        formationService.deleteById(id);
+        return ResponseEntity.ok("Formation deleted");
     }
 
     @GetMapping("/{id}")
