@@ -1,6 +1,7 @@
 package com.jobintechtracking.app.controllers;
 
 import com.jobintechtracking.app.entities.Learning;
+import com.jobintechtracking.app.entities.Steps;
 import com.jobintechtracking.app.services.LearningService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,11 @@ public class LearningController {
     @GetMapping
     public ResponseEntity<List<Learning>> getAllLearnings() {
         List<Learning> learnings = learningService.findAll();
+        return ResponseEntity.ok(learnings);
+    }
+    @GetMapping(params = "stepsId")
+    public ResponseEntity<List<Learning>> getStepsByFormationId(@RequestParam Long stepsId) {
+        List<Learning> learnings = learningService.getStepsBystepsId(stepsId);
         return ResponseEntity.ok(learnings);
     }
 }

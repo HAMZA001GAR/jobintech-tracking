@@ -1,6 +1,7 @@
 package com.jobintechtracking.app.services;
 
 import com.jobintechtracking.app.entities.Learning;
+import com.jobintechtracking.app.entities.Steps;
 import com.jobintechtracking.app.repositories.LearningRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,10 @@ public class LearningService {
 
     public List<Learning> findAll(){
         return learningRepository.findAll();
+    }
+
+    public List<Learning> getStepsBystepsId(Long stepsId) {
+        return learningRepository.findBystepsId(stepsId);
     }
 
 }
