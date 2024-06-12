@@ -3,7 +3,7 @@ package com.jobintechtracking.app.entities;
 import jakarta.persistence.*;
 
 @Entity
-public class Doing {
+public class  Doing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

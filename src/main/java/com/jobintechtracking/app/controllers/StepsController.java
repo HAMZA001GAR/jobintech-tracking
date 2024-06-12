@@ -1,5 +1,6 @@
 package com.jobintechtracking.app.controllers;
 
+import com.jobintechtracking.app.entities.Doing;
 import com.jobintechtracking.app.entities.Steps;
 import com.jobintechtracking.app.services.StepsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,14 @@ public class StepsController {
     public ResponseEntity<List<Steps>> getStepsByFormationId(@RequestParam Long formationId) {
         List<Steps> steps = stepsService.getStepsByFormationId(formationId);
         return ResponseEntity.ok(steps);
+    }
+    @PutMapping("/{id}")
+    public Steps updateSteps(@PathVariable Long id, @RequestBody Steps step) {
+        return stepsService.saveOrUpdateStep(step);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteSteps(@PathVariable Long id) {
+        stepsService.deleteStep(id);
     }
 }
