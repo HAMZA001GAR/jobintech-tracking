@@ -50,7 +50,7 @@ public class StepsController {
     }
     @PutMapping("/{id}")
     public Steps updateSteps(@PathVariable Long id, @RequestBody Steps step) {
-        return stepsService.saveOrUpdateStep(step);
+        return stepsService.UpdateStep(step);
     }
 
     @DeleteMapping("/{id}")

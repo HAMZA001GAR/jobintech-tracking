@@ -32,7 +32,7 @@ public class StepsService {
         return stepRepository.findByFormationId(formationId);
     }
 
-    public Steps saveOrUpdateStep(Steps step) {
+    public Steps UpdateStep(Steps step) {
         return stepRepository.save(step);
     }
 

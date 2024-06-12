@@ -29,7 +29,7 @@ public class DoingService {
         return doingRepository.findAll();
     }
 
-    public Doing saveOrUpdateDoing(Doing doing) {
+    public Doing UpdateDoing(Doing doing) {
          return doingRepository.save(doing);
     }
 

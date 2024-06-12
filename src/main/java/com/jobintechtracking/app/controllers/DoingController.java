@@ -42,7 +42,7 @@ public class DoingController {
     }
     @PutMapping("/{id}")
     public Doing updateDoing(@PathVariable Long id, @RequestBody Doing doing) {
-        return doingService.saveOrUpdateDoing(doing);
+        return doingService.UpdateDoing(doing);
     }
 
     @DeleteMapping("/{id}")
